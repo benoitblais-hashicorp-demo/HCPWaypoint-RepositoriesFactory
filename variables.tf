@@ -67,29 +67,26 @@ variable "template_variables" {
     name          : (Required) The name of the variable.
     variable_type : (Required) The type of the variable.
     options       : (Optional) A list of options for the variable, if applicable.
-    user_editable : (Required) Whether the variable is editable by the user creating an application.
+    user_editable : (Optional) Whether the variable is editable by the user creating an application.
   EOF
   type = list(object({
     name          = string
     variable_type = string
-    options       = list(string)
-    user_editable = bool
+    options       = optional(list(string), null)
+    user_editable = optional(bool, true)
   }))
   default = [
     {
       name          = "name"
       variable_type = "string"
-      user_editable = true
     },
     {
       name          = "description"
       variable_type = "string"
-      user_editable = true
     },
     {
       name          = "topics"
       variable_type = "string"
-      user_editable = true
     }
   ]
 }

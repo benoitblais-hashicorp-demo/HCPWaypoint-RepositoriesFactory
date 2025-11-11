@@ -105,7 +105,7 @@ Description: (Optional) A description of the Waypoint template, along with when 
 
 Type: `string`
 
-Default: `null`
+Default: `"This HCP Waypoint template provisions a GitHub repository. You must provide an application name (unique, up to 50 characters, letters/numbers/dashes/underscores, ends with -repository), repository name, description, and topics (comma-separated without spaces)."`
 
 ### <a name="input_template_labels"></a> [template\_labels](#input\_template\_labels)
 

@@ -28,7 +28,7 @@ variable "project_name" {
 variable "template_description" {
   description = "(Optional) A description of the Waypoint template, along with when and why it should be used, up to 500 characters"
   type        = string
-  default     = null
+  default     = "This HCP Waypoint template provisions a GitHub repository. You must provide an application name (unique, up to 50 characters, letters/numbers/dashes/underscores, ends with -repository), repository name, description, and topics (comma-separated without spaces)."
 
   validation {
     condition     = var.template_description == null ? true : length(var.template_description) <= 500

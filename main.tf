@@ -57,3 +57,9 @@ resource "hcp_waypoint_add_on_definition" "this" {
     }
   ]
 }
+
+resource "hcp_waypoint_add_on" "this" {
+  application_id = hcp_waypoint_template.this.id
+  definition_id  = hcp_waypoint_add_on_definition.this.id
+  name           = "HCPTerraformWorkspace"
+}

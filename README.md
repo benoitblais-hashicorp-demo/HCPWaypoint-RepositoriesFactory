@@ -1,6 +1,3 @@
-# HCPWaypoint-RepositoriesFactory
-Code to provision and manage HCP Waypoint for Repositories Factory using Terraform code (IaC).
-
 <!-- BEGIN_TF_DOCS -->
 # HCP Waypoint Repositories Factory
 
@@ -180,6 +177,7 @@ Default:
 
 The following resources are used by this module:
 
+- [hcp_waypoint_add_on.this](https://registry.terraform.io/providers/hashicorp/hcp/0.110.0/docs/resources/waypoint_add_on) (resource)
 - [hcp_waypoint_add_on_definition.this](https://registry.terraform.io/providers/hashicorp/hcp/0.110.0/docs/resources/waypoint_add_on_definition) (resource)
 - [hcp_waypoint_template.this](https://registry.terraform.io/providers/hashicorp/hcp/0.110.0/docs/resources/waypoint_template) (resource)
 - [tfe_project.add_on_project](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/project) (data source)

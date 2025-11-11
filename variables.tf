@@ -37,7 +37,7 @@ variable "template_summary" {
   type        = string
   default     = "GitHub repository deployment."
 
-validation {
+  validation {
     condition     = length(var.template_summary) <= 110
     error_message = "The template summary must not exceed 110 characters."
   }

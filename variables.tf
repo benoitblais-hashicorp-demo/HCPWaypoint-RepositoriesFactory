@@ -64,7 +64,7 @@ variable "template_summary" {
 variable "template_readme_path" {
   description = "(Optional) Path to the README markdown template file."
   type        = string
-  default     = "./files/README.md"
+  default     = "./files/README.tpl"
 }
 
 variable "template_variables" {

@@ -1,6 +1,3 @@
-# HCPWaypoint-RepositoriesFactory
-Code to provision and manage HCP Waypoint for Repositories Factory using Terraform code (IaC).
-
 <!-- BEGIN_TF_DOCS -->
 # HCP Waypoint Repositories Factory
 

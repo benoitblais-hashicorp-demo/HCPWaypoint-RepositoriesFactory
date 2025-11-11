@@ -25,6 +25,24 @@ variable "project_name" {
   nullable    = false
 }
 
+variable "template_description" {
+  description = "(Optional) A description of the Waypoint template, along with when and why it should be used, up to 500 characters"
+  type        = string
+  default     = null
+
+  validation {
+    condition     = var.template_description == null ? true : length(var.template_description) <= 500
+    error_message = "The template description must not exceed 500 characters."
+  }
+}
+
+variable "template_labels" {
+  description = "(Optional) Labels to assign to the Waypoint template."
+  type        = list(string)
+  default     = ["github", "repository"]
+  nullable    = false
+}
+
 variable "template_name" {
   description = "(Optional) Name of the Waypoint template."
   type        = string
@@ -43,20 +61,35 @@ variable "template_summary" {
   }
 }
 
-variable "template_description" {
-  description = "(Optional) A description of the Waypoint template, along with when and why it should be used, up to 500 characters"
-  type        = string
-  default     = null
-
-  validation {
-    condition     = var.template_description == null ? true : length(var.template_description) <= 500
-    error_message = "The template description must not exceed 500 characters."
-  }
-}
-
-variable "template_labels" {
-  description = "(Optional) Labels to assign to the Waypoint template."
-  type        = list(string)
-  default     = ["github", "repository"]
-  nullable    = false
+variable "template_variables" {
+  description = <<EOF
+  (Optional) The template_variables is a list of object that supports the following:
+    name          : (Required) The name of the variable.
+    variable_type : (Required) The type of the variable.
+    options       : (Optional) A list of options for the variable, if applicable.
+    user_editable : (Required) Whether the variable is editable by the user creating an application.
+  EOF
+  type = list(object({
+    name          = string
+    variable_type = string
+    options       = list(string)
+    user_editable = bool
+  }))
+  default = [
+    {
+      name          = "name"
+      variable_type = "string"
+      user_editable = true
+    },
+    {
+      name          = "description"
+      variable_type = "string"
+      user_editable = true
+    },
+    {
+      name          = "topics"
+      variable_type = "string"
+      user_editable = true
+    }
+  ]
 }

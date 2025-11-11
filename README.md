@@ -53,7 +53,7 @@ The following requirements are needed by this module:
 
 - <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (>= 1.13.0)
 
-- <a name="requirement_hcp"></a> [hcp](#requirement\_hcp) (0.110.0)
+- <a name="requirement_hcp"></a> [hcp](#requirement\_hcp) (0.109.0)
 
 - <a name="requirement_tfe"></a> [tfe](#requirement\_tfe) (~>0.70)
 
@@ -105,7 +105,7 @@ Description: (Optional) A description of the Waypoint template, along with when 
 
 Type: `string`
 
-Default: `null`
+Default: `"This HCP Waypoint template provisions a GitHub repository. You must provide an application name (unique, up to 50 characters, letters/numbers/dashes/underscores, ends with -repository), repository name, description, and topics (comma-separated without spaces)."`
 
 ### <a name="input_template_labels"></a> [template\_labels](#input\_template\_labels)
 
@@ -130,6 +130,14 @@ Type: `string`
 
 Default: `"GitHubRepository"`
 
+### <a name="input_template_readme_path"></a> [template\_readme\_path](#input\_template\_readme\_path)
+
+Description: (Optional) Path to the README markdown template file.
+
+Type: `string`
+
+Default: `"./files/README.md"`
+
 ### <a name="input_template_summary"></a> [template\_summary](#input\_template\_summary)
 
 Description: (Optional) A brief description of the Waypoint template, up to 110 characters.
@@ -144,7 +152,7 @@ Description:   (Optional) The template\_variables is a list of object that suppo
     name          : (Required) The name of the variable.  
     variable\_type : (Required) The type of the variable.  
     options       : (Optional) A list of options for the variable, if applicable.  
-    user\_editable : (Required) Whether the variable is editable by the user creating an application.
+    user\_editable : (Optional) Whether the variable is editable by the user creating an application.
 
 Type:
 
@@ -152,8 +160,8 @@ Type:
 list(object({
     name          = string
     variable_type = string
-    options       = list(string)
-    user_editable = bool
+    options       = optional(list(string), null)
+    user_editable = optional(bool, true)
   }))
 ```
 
@@ -163,17 +171,14 @@ Default:
 [
   {
     "name": "name",
-    "user_editable": true,
     "variable_type": "string"
   },
   {
     "name": "description",
-    "user_editable": true,
     "variable_type": "string"
   },
   {
     "name": "topics",
-    "user_editable": true,
     "variable_type": "string"
   }
 ]
@@ -183,7 +188,7 @@ Default:
 
 The following resources are used by this module:
 
-- [hcp_waypoint_template.this](https://registry.terraform.io/providers/hashicorp/hcp/0.110.0/docs/resources/waypoint_template) (resource)
+- [hcp_waypoint_template.this](https://registry.terraform.io/providers/hashicorp/hcp/0.109.0/docs/resources/waypoint_template) (resource)
 - [tfe_project.this](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/project) (data source)
 - [tfe_registry_module.this](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/registry_module) (data source)
 

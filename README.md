@@ -132,11 +132,11 @@ Default: `"GitHubRepository"`
 
 ### <a name="input_template_summary"></a> [template\_summary](#input\_template\_summary)
 
-Description: (Optional) A brief description of the Waypoint template, up to 110 characters.
+Description: (Optional) A brief description of the Waypoint template, up to 64 characters.
 
 Type: `string`
 
-Default: `"This HCP Waypoint template is use to provision a GitHub repository."`
+Default: `"This template is use to provision a GitHub repository."`
 
 ### <a name="input_template_variables"></a> [template\_variables](#input\_template\_variables)
 

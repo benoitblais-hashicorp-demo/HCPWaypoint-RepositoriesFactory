@@ -130,6 +130,14 @@ Type: `string`
 
 Default: `"GitHubRepository"`
 
+### <a name="input_template_readme_path"></a> [template\_readme\_path](#input\_template\_readme\_path)
+
+Description: (Optional) Path to the README markdown template file.
+
+Type: `string`
+
+Default: `"./files/README.md"`
+
 ### <a name="input_template_summary"></a> [template\_summary](#input\_template\_summary)
 
 Description: (Optional) A brief description of the Waypoint template, up to 110 characters.

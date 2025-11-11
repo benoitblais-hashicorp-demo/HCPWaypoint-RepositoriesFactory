@@ -17,5 +17,6 @@ resource "hcp_waypoint_template" "this" {
   terraform_no_code_module_id     = data.tfe_registry_module.this.no_code_module_id
   description                     = var.template_description
   labels                          = var.template_labels
+  readme_markdown_template        = fileexists(var.template_readme_path) ? file(var.template_readme_path) : null
   variable_options                = var.template_variables
 }

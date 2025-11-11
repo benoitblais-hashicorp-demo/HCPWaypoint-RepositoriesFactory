@@ -61,6 +61,12 @@ variable "template_summary" {
   }
 }
 
+variable "template_readme_path" {
+  description = "(Optional) Path to the README markdown template file."
+  type        = string
+  default     = "./files/README.md"
+}
+
 variable "template_variables" {
   description = <<EOF
   (Optional) The template_variables is a list of object that supports the following:

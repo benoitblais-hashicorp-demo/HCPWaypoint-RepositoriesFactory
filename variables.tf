@@ -51,13 +51,13 @@ variable "template_name" {
 }
 
 variable "template_summary" {
-  description = "(Optional) A brief description of the Waypoint template, up to 110 characters."
+  description = "(Optional) A brief description of the Waypoint template, up to 64 characters."
   type        = string
-  default     = "This HCP Waypoint template is use to provision a GitHub repository."
+  default     = "This template is use to provision a GitHub repository."
 
   validation {
-    condition     = length(var.template_summary) <= 110
-    error_message = "The template summary must not exceed 110 characters."
+    condition     = length(var.template_summary) <= 64
+    error_message = "The template summary must not exceed 64 characters."
   }
 }
 

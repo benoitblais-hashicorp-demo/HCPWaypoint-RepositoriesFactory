@@ -180,8 +180,11 @@ Default:
 
 The following resources are used by this module:
 
+- [hcp_waypoint_add_on_definition.this](https://registry.terraform.io/providers/hashicorp/hcp/0.110.0/docs/resources/waypoint_add_on_definition) (resource)
 - [hcp_waypoint_template.this](https://registry.terraform.io/providers/hashicorp/hcp/0.110.0/docs/resources/waypoint_template) (resource)
+- [tfe_project.add_on_project](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/project) (data source)
 - [tfe_project.this](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/project) (data source)
+- [tfe_registry_module.add_on_module](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/registry_module) (data source)
 - [tfe_registry_module.this](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/registry_module) (data source)
 
 ## Outputs

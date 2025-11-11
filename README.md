@@ -144,7 +144,7 @@ Description:   (Optional) The template\_variables is a list of object that suppo
     name          : (Required) The name of the variable.  
     variable\_type : (Required) The type of the variable.  
     options       : (Optional) A list of options for the variable, if applicable.  
-    user\_editable : (Required) Whether the variable is editable by the user creating an application.
+    user\_editable : (Optional) Whether the variable is editable by the user creating an application.
 
 Type:
 
@@ -152,8 +152,8 @@ Type:
 list(object({
     name          = string
     variable_type = string
-    options       = list(string)
-    user_editable = bool
+    options       = optional(list(string), null)
+    user_editable = optional(bool, true)
   }))
 ```
 
@@ -163,17 +163,14 @@ Default:
 [
   {
     "name": "name",
-    "user_editable": true,
     "variable_type": "string"
   },
   {
     "name": "description",
-    "user_editable": true,
     "variable_type": "string"
   },
   {
     "name": "topics",
-    "user_editable": true,
     "variable_type": "string"
   }
 ]

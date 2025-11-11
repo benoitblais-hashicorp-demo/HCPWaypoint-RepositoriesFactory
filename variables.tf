@@ -49,7 +49,7 @@ variable "template_description" {
   default     = null
 
   validation {
-    condition     = length(var.template_description) <= 500
+    condition     = var.template_description == null ? true : length(var.template_description) <= 500
     error_message = "The template description must not exceed 500 characters."
   }
 }

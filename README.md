@@ -53,7 +53,7 @@ The following requirements are needed by this module:
 
 - <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (>= 1.13.0)
 
-- <a name="requirement_hcp"></a> [hcp](#requirement\_hcp) (0.109.0)
+- <a name="requirement_hcp"></a> [hcp](#requirement\_hcp) (0.110.0)
 
 - <a name="requirement_tfe"></a> [tfe](#requirement\_tfe) (~>0.70)
 
@@ -101,7 +101,7 @@ Default: `"GitHub Repositories Factory"`
 
 ### <a name="input_template_description"></a> [template\_description](#input\_template\_description)
 
-Description: (Optional) A description of the Waypoint template, along with when and why it should be used, up to 500 characters
+Description: (Optional) A description of the Waypoint template, along with when and why it should be used, up to 500 characters.
 
 Type: `string`
 
@@ -130,21 +130,13 @@ Type: `string`
 
 Default: `"GitHubRepository"`
 
-### <a name="input_template_readme_path"></a> [template\_readme\_path](#input\_template\_readme\_path)
-
-Description: (Optional) Path to the README markdown template file.
-
-Type: `string`
-
-Default: `"./files/README.tpl"`
-
 ### <a name="input_template_summary"></a> [template\_summary](#input\_template\_summary)
 
 Description: (Optional) A brief description of the Waypoint template, up to 110 characters.
 
 Type: `string`
 
-Default: `"GitHub repository deployment."`
+Default: `"This HCP Waypoint template is use to provision a GitHub repository."`
 
 ### <a name="input_template_variables"></a> [template\_variables](#input\_template\_variables)
 
@@ -188,7 +180,7 @@ Default:
 
 The following resources are used by this module:
 
-- [hcp_waypoint_template.this](https://registry.terraform.io/providers/hashicorp/hcp/0.109.0/docs/resources/waypoint_template) (resource)
+- [hcp_waypoint_template.this](https://registry.terraform.io/providers/hashicorp/hcp/0.110.0/docs/resources/waypoint_template) (resource)
 - [tfe_project.this](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/project) (data source)
 - [tfe_registry_module.this](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/registry_module) (data source)
 

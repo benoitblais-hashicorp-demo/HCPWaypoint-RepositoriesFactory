@@ -26,7 +26,7 @@ variable "project_name" {
 }
 
 variable "template_description" {
-  description = "(Optional) A description of the Waypoint template, along with when and why it should be used, up to 500 characters"
+  description = "(Optional) A description of the Waypoint template, along with when and why it should be used, up to 500 characters."
   type        = string
   default     = "This HCP Waypoint template provisions a GitHub repository. You must provide an application name (unique, up to 50 characters, letters/numbers/dashes/underscores, ends with -repository), repository name, description, and topics (comma-separated without spaces)."
 
@@ -53,7 +53,7 @@ variable "template_name" {
 variable "template_summary" {
   description = "(Optional) A brief description of the Waypoint template, up to 110 characters."
   type        = string
-  default     = "GitHub repository deployment."
+  default     = "This HCP Waypoint template is use to provision a GitHub repository."
 
   validation {
     condition     = length(var.template_summary) <= 110
@@ -61,11 +61,11 @@ variable "template_summary" {
   }
 }
 
-variable "template_readme_path" {
-  description = "(Optional) Path to the README markdown template file."
-  type        = string
-  default     = "./files/README.tpl"
-}
+# variable "template_readme_path" {
+#   description = "(Optional) Path to the README markdown template file."
+#   type        = string
+#   default     = "./files/README.tpl"
+# }
 
 variable "template_variables" {
   description = <<EOF

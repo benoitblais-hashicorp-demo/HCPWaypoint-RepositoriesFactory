@@ -138,6 +138,44 @@ Type: `string`
 
 Default: `"GitHub repository deployment."`
 
+### <a name="input_template_variables"></a> [template\_variables](#input\_template\_variables)
+
+Description:   (Optional) The template\_variables is a list of object that supports the following:  
+    name          : (Required) The name of the variable.  
+    variable\_type : (Required) The type of the variable.  
+    options       : (Optional) A list of options for the variable, if applicable.  
+    user\_editable : (Optional) Whether the variable is editable by the user creating an application.
+
+Type:
+
+```hcl
+list(object({
+    name          = string
+    variable_type = string
+    options       = optional(list(string), null)
+    user_editable = optional(bool, true)
+  }))
+```
+
+Default:
+
+```json
+[
+  {
+    "name": "name",
+    "variable_type": "string"
+  },
+  {
+    "name": "description",
+    "variable_type": "string"
+  },
+  {
+    "name": "topics",
+    "variable_type": "string"
+  }
+]
+```
+
 ## Resources
 
 The following resources are used by this module:

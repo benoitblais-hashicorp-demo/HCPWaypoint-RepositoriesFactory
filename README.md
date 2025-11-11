@@ -136,7 +136,7 @@ Description: (Optional) Path to the README markdown template file.
 
 Type: `string`
 
-Default: `"./files/README.md"`
+Default: `"./files/README.tpl"`
 
 ### <a name="input_template_summary"></a> [template\_summary](#input\_template\_summary)
 

@@ -21,45 +21,6 @@ resource "hcp_waypoint_template" "this" {
   variable_options = var.template_variables
 
   lifecycle {
-    ignore_changes = [ readme_markdown_template ]
+    ignore_changes = [readme_markdown_template]
   }
-}
-
-data "tfe_registry_module" "add_on_module" {
-  organization    = var.organization
-  name            = "workspacesfactory"
-  module_provider = "tfe"
-}
-
-data "tfe_project" "add_on_project" {
-  name         = "Terraform Workspaces Factory"
-  organization = var.organization
-}
-
-resource "hcp_waypoint_add_on_definition" "this" {
-  name                            = "HCPTerraformWorkspace"
-  summary                         = "An add-on that provisions a HCP Terraform Workspace."
-  description                     = "This add-on provisions a HCP Terraform Workspace."
-  terraform_project_id            = data.tfe_project.add_on_project.id
-  labels                          = ["hcp terraform", "workspace"]
-  terraform_no_code_module_source = data.tfe_registry_module.add_on_module.no_code_module_source
-  terraform_no_code_module_id     = data.tfe_registry_module.add_on_module.no_code_module_id
-  variable_options = [
-    {
-      name          = "name"
-      user_editable = true
-      variable_type = "string"
-    },
-    {
-      name          = "project_name"
-      user_editable = true
-      variable_type = "string"
-    }
-  ]
-}
-
-resource "hcp_waypoint_add_on" "this" {
-  application_id = hcp_waypoint_template.this.id
-  definition_id  = hcp_waypoint_add_on_definition.this.id
-  name           = "HCPTerraformWorkspace"
 }

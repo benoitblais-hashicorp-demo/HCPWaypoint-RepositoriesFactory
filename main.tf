@@ -21,6 +21,6 @@ resource "hcp_waypoint_template" "this" {
   variable_options = var.template_variables
 
   lifecycle {
-    ignore_changes = [ readme_markdown_template ]
+    ignore_changes = [readme_markdown_template]
   }
 }

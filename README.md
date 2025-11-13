@@ -90,7 +90,7 @@ Default: `"github"`
 
 ### <a name="input_project_name"></a> [project\_name](#input\_project\_name)
 
-Description: (Required) Name of the Terraform Cloud/Enterprise project where the workspace created by the no-code is located.
+Description: (Optional) Name of the Terraform Cloud/Enterprise project where the workspace created by the no-code is located.
 
 Type: `string`
 

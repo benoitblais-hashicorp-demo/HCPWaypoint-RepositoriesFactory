@@ -19,7 +19,7 @@ variable "module_provider" {
 }
 
 variable "project_name" {
-  description = "(Required) Name of the Terraform Cloud/Enterprise project where the workspace created by the no-code is located."
+  description = "(Optional) Name of the Terraform Cloud/Enterprise project where the workspace created by the no-code is located."
   type        = string
   default     = "GitHub Repositories Factory"
   nullable    = false
